@@ -33,6 +33,7 @@ class _DetailScreenHospedajeState extends State<DetailScreenHospedaje> {
     screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 212, 255, 242),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

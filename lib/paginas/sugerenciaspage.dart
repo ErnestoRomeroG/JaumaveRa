@@ -43,6 +43,24 @@ class SugerenciasPage extends StatelessWidget {
                   'Para mayores sugerencias ingrese a nuestra pagina oficial, donde podras ver más contenido de Jaumave Tamaulipas:'),
             ),
           ),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              shape: const CircleBorder(),
+              padding: const EdgeInsets.all(30),
+              backgroundColor: Colors.black, // <-- Button color
+              foregroundColor: Colors.blue, // <-- Splash color
+            ),
+            child: Link(
+                target: LinkTarget.self,
+                uri: Uri.parse("http://www.jaumave.gob.mx/contacto/"),
+                builder: (context, followLink) => GestureDetector(
+                      onTap: followLink,
+                      child: const Icon(Icons.link_sharp, color: Colors.white),
+                    )
+                //const Icon(Icons.link_sharp , color: Colors.white)
+                ),
+          )
         ],
       ));
 }

@@ -11,9 +11,11 @@ class Usercontactos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 212, 255, 242),
         body: Padding(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 0),
             child: Scaffold(
+              backgroundColor: Color.fromARGB(255, 212, 255, 242),
               body: ListView(
                 children: [
                   Container(

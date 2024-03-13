@@ -45,6 +45,7 @@ class _HospedajeScreenState extends State<HospedajeScreen> {
 
     final Future<List<dynamic>> restaurantes = getHospedaje();
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 212, 255, 242),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         centerTitle: true,

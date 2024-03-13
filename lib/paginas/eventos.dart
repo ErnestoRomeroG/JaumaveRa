@@ -174,7 +174,7 @@ class Usereventos extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Color.fromARGB(255, 255, 235, 230),
       body: SafeArea(
         child: ListView(
           children: [

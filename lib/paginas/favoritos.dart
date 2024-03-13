@@ -71,56 +71,57 @@ class FavoriteListState extends State<FavoriteList> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+        backgroundColor: Color.fromARGB(255, 255, 235, 230),
         body: SafeArea(
-      child: items.isNotEmpty
-          ? ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                final Like item = items[index];
-                //final isFavorite = favoriteItems.contains(item);
+          child: items.isNotEmpty
+              ? ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    final Like item = items[index];
+                    //final isFavorite = favoriteItems.contains(item);
 
-                return SingleChildScrollView(
-                  child: SafeArea(
-                      child: Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 10, horizontal: screenWidth / 25),
-                    child: Column(
-                      children: [
-                        ItemWidget(
-                          id: item.id,
-                          asset: item.asset,
-                          title: item.title,
-                          desc: item.desc,
-                          fullDesc: item.fullDesc,
-                          ubicacion: item.ubicacion,
-                          coordenada: item.coordenada,
-                          contactos1: item.contactos1,
-                          isFavorite: true,
-                          onFavoritePressed: () async {
-                            // Cuando el botón de favoritos es presionado en ItemWidget,
-                            // elimina el elemento de la lista y actualiza el estado
-                            setState(() {
-                              items.removeAt(index);
-                              likes.loadLikes();
-                              //items.removeWhere((o) => o.id == item.id);
-                            });
-                          },
-                        )
-                      ],
+                    return SingleChildScrollView(
+                      child: SafeArea(
+                          child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 10, horizontal: screenWidth / 25),
+                        child: Column(
+                          children: [
+                            ItemWidget(
+                              id: item.id,
+                              asset: item.asset,
+                              title: item.title,
+                              desc: item.desc,
+                              fullDesc: item.fullDesc,
+                              ubicacion: item.ubicacion,
+                              coordenada: item.coordenada,
+                              contactos1: item.contactos1,
+                              isFavorite: true,
+                              onFavoritePressed: () async {
+                                // Cuando el botón de favoritos es presionado en ItemWidget,
+                                // elimina el elemento de la lista y actualiza el estado
+                                setState(() {
+                                  items.removeAt(index);
+                                  likes.loadLikes();
+                                  //items.removeWhere((o) => o.id == item.id);
+                                });
+                              },
+                            )
+                          ],
+                        ),
+                      )),
+                    );
+                  })
+              : const Center(
+                  child: Text(
+                    'No tienes favoritos',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                  )),
-                );
-              })
-          : const Center(
-              child: Text(
-                'No tienes favoritos',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ),
-    ));
+        ));
   }
 
 /* 

@@ -98,8 +98,9 @@ class Userprincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Future<List<dynamic>> trending = getTrending();
+
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 236, 236, 236),
+      backgroundColor: Color.fromARGB(255, 212, 255, 242),
       body: Column(
         children: [
           const SizedBox(
@@ -227,6 +228,8 @@ class Userprincipal extends StatelessWidget {
                         const EdgeInsets.only(right: 12, bottom: 8, top: 8),
                     child: Material(
                       elevation: 3,
+                      color: Color.fromARGB(255, 253, 199, 167),
+                      borderRadius: BorderRadius.circular(30),
                       shadowColor: Colors.black,
                       child: SizedBox(
                         height: 100,
@@ -252,7 +255,29 @@ class Userprincipal extends StatelessWidget {
                     ),
                   ),
                 ),
-              ))
+              )),
+
+          const SizedBox(height: 28),
+          // Aquí añadimos la imagen debajo de las categorías
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 105,
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: NetworkImage(
+                      'http://www.jaumave.gob.mx/wp-content/uploads/sites/13/2022/05/slider_jaumave_2400x600-04-850x300.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.grey[300] ?? Colors.grey,
+                  width: 3.0,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
